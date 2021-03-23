@@ -33,26 +33,27 @@ public class Main {
         AccountService accountService = new AccountService();
         StatusService statusService = new StatusService();
 
-        List<Client> clients = clientService.getAll();
-        System.out.println(clients);
-        clientService.save(client);
-        clientService.delete();
-        clientService.update();
-        System.out.println(clientService.getByPhone(380981613674L));
-        System.out.println(clientService.joinClientIDAccount());
-        clientService.getNameEmailAliasFromJoin();
+//        List<Client> clients = clientService.getAll();
+//        System.out.println(clients);
+//        clientService.save(client);
+//        clientService.delete();
+//        clientService.update();
+//        System.out.println(clientService.getByPhone(380981613674L));
+//        System.out.println(clientService.joinClientIDAccount());
+        System.out.println(clientService.getNameEmailAliasFromJoin());
 
-        List<Account> accounts = accountService.getAll();
-        System.out.println(accounts);
-        accountService.save(account);
-        accountService.delete();
-        accountService.update();
-        accountService.selectNumberByValue(600.78);
+//        List<Account> accounts = accountService.getAll();
+//        System.out.println(accounts);
+//        accountService.save(account);
+//        accountService.delete();
+//        accountService.update();
+//        List<String> selectNumberByValue = accountService.selectNumberByValue(600.78);
+//        System.out.println(selectNumberByValue);
 
-        List<Status> statuses = statusService.getAll();
-        System.out.println(statuses);
-        statusService.save(status);
-        statusService.update();
-        statusService.delete();
+//        List<Status> statuses = statusService.getAll();
+//        System.out.println(statuses);
+//        statusService.save(status);
+//        statusService.update();
+//        statusService.delete();
     }
 }

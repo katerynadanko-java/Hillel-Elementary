@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class Status {
-    int id;
-    String alias;
-    String description;
+    private int id;
+    private String alias;
+    private String description;
 }

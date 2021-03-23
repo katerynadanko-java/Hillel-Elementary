@@ -4,8 +4,8 @@ import lombok.Data;
 
 @Data
 public class Account {
-    int id;
-    int client_id;
-    String number;
-    double value;
+    private int id;
+    private int client_id;
+    private String number;
+    private double value;
 }

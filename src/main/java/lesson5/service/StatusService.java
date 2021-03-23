@@ -51,11 +51,11 @@ public class StatusService {
         }
     }
 
-    public void delete() {
+    public void delete(Status status) {
         try (Connection connection = Database.getConnection();
              PreparedStatement preparedStatement = connection.
                      prepareStatement(DELETE_STATUSES_QUERY)) {
-            preparedStatement.setInt(1, 2);
+            preparedStatement.setInt(1, status.getId());
 
             preparedStatement.execute();
             connection.commit();
@@ -64,13 +64,13 @@ public class StatusService {
         }
     }
 
-    public void update() {
+    public void update(Status status) {
         try (Connection connection = Database.getConnection();
              PreparedStatement preparedStatement = connection.
                      prepareStatement(UPDATE_STATUSES_QUERY)) {
-            preparedStatement.setString(1, "SUPER_ADMIN");
-            preparedStatement.setString(2, "the highest level of activity");
-            preparedStatement.setInt(3, 4);
+            preparedStatement.setString(1, status.getAlias());
+            preparedStatement.setString(2, status.getDescription());
+            preparedStatement.setInt(3, status.getId());
 
             preparedStatement.execute();
             connection.commit();

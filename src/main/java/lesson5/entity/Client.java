@@ -4,11 +4,11 @@ import lombok.Data;
 
 @Data
 public class Client {
-    int id;
-    String name;
-    String email;
-    long phone;
-    String about;
-    int age;
+    private int id;
+    private String name;
+    private String email;
+    private long phone;
+    private String about;
+    private int age;
 
 }

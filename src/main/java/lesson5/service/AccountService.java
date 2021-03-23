@@ -54,11 +54,11 @@ public class AccountService {
         }
     }
 
-    public void delete() {
+    public void delete(Account account) {
         try (Connection connection = Database.getConnection();
              PreparedStatement preparedStatement = connection.
                      prepareStatement(DELETE_ACCOUNT_QUERY)) {
-            preparedStatement.setInt(1, 25);
+            preparedStatement.setInt(1, account.getId());
 
             preparedStatement.execute();
             connection.commit();
@@ -67,13 +67,13 @@ public class AccountService {
         }
     }
 
-    public void update() {
+    public void update(Account account) {
         try (Connection connection = Database.getConnection();
              PreparedStatement preparedStatement = connection.
                      prepareStatement(UPDATE_ACCOUNT_QUERY)) {
-            preparedStatement.setString(1, "4545");
-            preparedStatement.setDouble(2, 458.41);
-            preparedStatement.setInt(3, 3);
+            preparedStatement.setString(1, account.getNumber());
+            preparedStatement.setDouble(2, account.getValue());
+            preparedStatement.setInt(3, account.getId());
 
             preparedStatement.execute();
             connection.commit();
@@ -82,8 +82,7 @@ public class AccountService {
         }
     }
 
-    public void selectNumberByValue(Double value) {
-        Account account = new Account();
+    public List<String> selectNumberByValue(Double value) {
         List<String> numbers = new ArrayList<>();
         try (Connection connection = Database.getConnection();
              PreparedStatement preparedStatement = connection.
@@ -91,17 +90,14 @@ public class AccountService {
             preparedStatement.setDouble(1, value);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                account.setValue(resultSet.getDouble("value"));
-                if (account != null && account.getValue() > value) {
-                    numbers.add(resultSet.getString("number"));
-                }
+                numbers.add(resultSet.getString("number"));
             }
-            System.out.println(numbers);
             preparedStatement.execute();
             connection.commit();
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        return numbers;
     }
 }

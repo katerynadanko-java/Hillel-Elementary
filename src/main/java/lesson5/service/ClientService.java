@@ -63,11 +63,11 @@ public class ClientService {
         }
     }
 
-    public void delete() {
+    public void delete(Client client) {
         try (Connection connection = Database.getConnection();
              PreparedStatement preparedStatement = connection.
                      prepareStatement(DELETE_CLIENT_QUERY)) {
-            preparedStatement.setInt(1, 5);
+            preparedStatement.setInt(1, client.getId());
 
             preparedStatement.execute();
             connection.commit();
@@ -76,13 +76,13 @@ public class ClientService {
         }
     }
 
-    public void update() {
+    public void update(Client client) {
         try (Connection connection = Database.getConnection();
              PreparedStatement preparedStatement = connection.
                      prepareStatement(UPDATE_CLIENT_QUERY)) {
-            preparedStatement.setString(1, "Elena777");
-            preparedStatement.setString(2, "elena777@gmail.com");
-            preparedStatement.setInt(3, 13);
+            preparedStatement.setString(1, client.getName());
+            preparedStatement.setString(2, client.getEmail());
+            preparedStatement.setInt(3, client.getId());
 
             preparedStatement.execute();
             connection.commit();
@@ -104,7 +104,6 @@ public class ClientService {
                 client.setEmail(resultSet.getString("email"));
                 client.setPhone(resultSet.getLong("phone"));
                 client.setAbout(resultSet.getString("about"));
-                if (client != null && client.getPhone() == phone)
                     return client;
             }
             preparedStatement.execute();
@@ -137,9 +136,9 @@ public class ClientService {
         return clients;
     }
 
-    public void getNameEmailAliasFromJoin() {
+    public List<ClientWithStatus> getNameEmailAliasFromJoin() {
+        List<ClientWithStatus> clientsWithStatuses = new ArrayList<>();
         ClientWithStatus clientWithStatus = new ClientWithStatus();
-
         try (Connection connection = Database.getConnection();
              Statement statement = connection.createStatement()) {
             ResultSet resultSet = statement.executeQuery(SELECT_CLIENT_NAME_EMAIL_ALIAS_QUERY);
@@ -147,12 +146,13 @@ public class ClientService {
                 clientWithStatus.setName(resultSet.getString("name"));
                 clientWithStatus.setEmail(resultSet.getString("email"));
                 clientWithStatus.setAlias(resultSet.getString("alias"));
-                System.out.println(clientWithStatus);
+                clientsWithStatuses.add(clientWithStatus);
             }
             connection.commit();
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        return clientsWithStatuses;
     }
 }
 
