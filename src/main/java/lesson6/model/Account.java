@@ -16,12 +16,13 @@ import javax.persistence.Table;
 @Table(name = "accounts")
 public class Account {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column(name = "client_id", nullable = false)
+    @Column(name = "client_id")
     private int clientId;
-    @Column(unique = true, nullable = false, length = 20)
+    @Column(name = "number", unique = true, nullable = false, length = 20)
     private String number;
-    @Column(nullable = false)
-    private Double value;
+    @Column(name = "value", nullable = false)
+    private double value;
+
 }

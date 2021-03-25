@@ -1,8 +1,8 @@
-package lesson6.dao;
+package lesson6.service;
 
 import lesson6.model.Status;
 
-public interface StatusDao {
+public interface StatusService {
     void save(Status status);
 
     Status update(Status status);

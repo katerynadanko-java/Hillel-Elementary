@@ -1,5 +1,6 @@
 package lesson6.util;
 
+import lesson1.Service;
 import lesson6.model.Account;
 import lesson6.model.Client;
 import lesson6.model.Status;
@@ -13,10 +14,13 @@ public class HibernateUtil {
     public static SessionFactory getSessionFactory() {
         if (sessionFactory == null) {
             try {
+
                 Configuration configuration = new Configuration().configure();
+
                 configuration.addAnnotatedClass(Client.class);
-//                configuration.addAnnotatedClass(Account.class);
-//                configuration.addAnnotatedClass(Status.class);
+                configuration.addAnnotatedClass(Account.class);
+                configuration.addAnnotatedClass(Status.class);
+
                 StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder()
                         .applySettings(configuration.getProperties());
                 sessionFactory = configuration.buildSessionFactory(builder.build());
@@ -26,5 +30,5 @@ public class HibernateUtil {
         }
         return sessionFactory;
     }
-}
 
+}

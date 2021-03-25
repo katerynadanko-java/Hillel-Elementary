@@ -16,11 +16,10 @@ import javax.persistence.Table;
 @Table(name = "statuses")
 public class Status {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column(unique = true, nullable = false, length = 15)
-    private System alias;
-    @Column(nullable = false)
+    @Column(name = "alias", length = 15, unique = true, nullable = false)
+    private String alias;
+    @Column(name = "description", nullable = false)
     private String description;
-
 }

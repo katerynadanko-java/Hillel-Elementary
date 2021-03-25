@@ -1,17 +1,13 @@
-package lesson6.dao;
+package lesson6.service;
 
 import lesson6.model.Account;
 
 import java.util.List;
 
-public interface AccountDao {
+public interface AccountService {
     void save(Account account);
-
-    Account update(Account account);
-
     void delete(Account account);
-
+    Account update(Account account);
     Account getById(int id);
-
     List<Account> getByNumber(String number);
 }
