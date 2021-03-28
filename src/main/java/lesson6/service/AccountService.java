@@ -7,7 +7,7 @@ import java.util.List;
 public interface AccountService {
     void save(Account account);
     void delete(Account account);
-    Account update(Account account);
+    void update(Account account);
     Account getById(int id);
     List<Account> getByNumber(String number);
 }

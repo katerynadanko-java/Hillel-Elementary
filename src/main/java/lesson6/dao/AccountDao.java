@@ -7,7 +7,7 @@ import java.util.List;
 public interface AccountDao {
     void save(Account account);
 
-    Account update(Account account);
+    void update(Account account);
 
     void delete(Account account);
 

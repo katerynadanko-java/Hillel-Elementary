@@ -30,7 +30,7 @@ public class ClientDaoImpl implements ClientDao {
     }
 
     @Override
-    public Client update(Client client) {
+    public void update(Client client) {
         SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
@@ -38,7 +38,7 @@ public class ClientDaoImpl implements ClientDao {
         transaction.commit();
         session.close();
 
-        return client;
+
     }
 
     @Override
@@ -52,6 +52,7 @@ public class ClientDaoImpl implements ClientDao {
     public List<Client> getByPhone(long phone) {
         SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
         Session session = sessionFactory.openSession();
-        return (List<Client>) session.createQuery("FROM lesson6.model.Client").list();
+        return (List<Client>) session.createQuery("FROM lesson6.model.Client WHERE phone = :phone")
+                .setParameter("phone", phone).uniqueResult();
     }
 }

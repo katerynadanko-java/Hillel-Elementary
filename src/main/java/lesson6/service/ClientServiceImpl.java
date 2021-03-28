@@ -6,7 +6,7 @@ import lesson6.model.Client;
 
 import java.util.List;
 
-public class CLientServiceImpl implements ClientService {
+public class ClientServiceImpl implements ClientService {
     @Override
     public void save(Client client) {
         ClientDao clientDao = new ClientDaoImpl();
@@ -24,14 +24,15 @@ public class CLientServiceImpl implements ClientService {
     }
 
     @Override
-    public Client update(Client client) {
+    public void update(Client client) {
         ClientDao clientDao = new ClientDaoImpl();
+        clientDao.update(client);
         client.setId(client.getId());
         client.setPhone(client.getPhone());
         client.setEmail(client.getEmail());
         client.setName(client.getName());
         client.setAbout(client.getAbout());
-        return clientDao.update(client);
+
     }
 
     @Override

@@ -22,10 +22,10 @@ public class AccountSrrviceImpl implements AccountService {
     }
 
     @Override
-    public Account update(Account account) {
+    public void update(Account account) {
         AccountDao accountDao = new AccountDaoImpl();
         accountDao.update(account);
-        return null;
+
     }
 
     @Override

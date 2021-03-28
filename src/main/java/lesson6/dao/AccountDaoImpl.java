@@ -21,14 +21,14 @@ public class AccountDaoImpl implements AccountDao {
     }
 
     @Override
-    public Account update(Account account) {
+    public void update(Account account) {
         SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
         session.update(account);
         transaction.commit();
         session.close();
-        return account;
+
     }
 
     @Override
