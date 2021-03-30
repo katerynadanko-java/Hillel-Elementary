@@ -22,7 +22,7 @@
 #
 # JRE version:  (8.0_271-b09) (build )
 # Java VM: Java HotSpot(TM) 64-Bit Server VM (25.271-b09 mixed mode windows-amd64 compressed oops)
-# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+# Failed to write core dump. Minidumps are not enabled by default on student versions of Windows
 #
 
 ---------------  T H R E A D  ---------------

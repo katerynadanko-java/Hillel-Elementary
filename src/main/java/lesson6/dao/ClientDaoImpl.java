@@ -49,10 +49,10 @@ public class ClientDaoImpl implements ClientDao {
     }
 
     @Override
-    public List<Client> getByPhone(long phone) {
+    public Client getByPhone(long phone) {
         SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
         Session session = sessionFactory.openSession();
-        return (List<Client>) session.createQuery("FROM lesson6.model.Client WHERE phone = :phone")
+        return (Client) session.createQuery("FROM lesson6.model.Client WHERE phone = :phone")
                 .setParameter("phone", phone).uniqueResult();
     }
 }

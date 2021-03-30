@@ -13,5 +13,5 @@ public interface ClientDao {
 
     Client getById(int id);
 
-    List<Client> getByPhone(long phone);
+    Client getByPhone(long phone);
 }

@@ -27,11 +27,6 @@ public class ClientServiceImpl implements ClientService {
     public void update(Client client) {
         ClientDao clientDao = new ClientDaoImpl();
         clientDao.update(client);
-        client.setId(client.getId());
-        client.setPhone(client.getPhone());
-        client.setEmail(client.getEmail());
-        client.setName(client.getName());
-        client.setAbout(client.getAbout());
 
     }
 
@@ -42,7 +37,7 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public List<Client> getByPhone(long phone) {
+    public Client getByPhone(long phone) {
         ClientDao clientDao = new ClientDaoImpl();
         return clientDao.getByPhone(phone);
     }

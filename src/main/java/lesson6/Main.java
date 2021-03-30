@@ -28,12 +28,12 @@ public class Main {
 //
         Client client = new Client();
         client.setId(26);
-        client.setName("Dmytro3");
-        client.setEmail("dmytro3@mail.com");
+        client.setName("Maria777");
+        client.setEmail("maria777@mail.com");
         client.setAbout("good client");
-        client.setPhone(380687503173L);
+        client.setPhone(380687572173L);
         ClientService clientService = new ClientServiceImpl();
-//        List<Client> clientsGetByPhone = clientService.getByPhone(380687553173L);
+//        Client clientsGetByPhone = clientService.getByPhone(380687553173L);
 //        System.out.println(clientsGetByPhone);
 //        clientService.delete(client);
 //        Client getClientById = clientService.getById(7);

@@ -9,5 +9,5 @@ public interface ClientService {
     void delete(Client client);
     void update(Client client);
     Client getById(int id);
-    List<Client> getByPhone(long phone);
+    Client getByPhone(long phone);
 }
