@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--suppress MavenModelInspection, MavenModelInspection -->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <packaging>war</packaging>
 
     <groupId>org.example</groupId>
     <artifactId>Hillel-Elementary</artifactId>
@@ -15,13 +17,14 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
                     <source>8</source>
+                    <target>8</target>
                 </configuration>
             </plugin>
         </plugins>
     </build>
-    <packaging>jar</packaging>
-    <name>Hillel-Elementary</name>
-    <description>Hillel Elementary project</description>
+<!--    <packaging>war</packaging>-->
+<!--    <name>Hillel-Elementary</name>-->
+<!--    <description>Hillel Elementary project</description>-->
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
@@ -44,6 +47,19 @@
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <version>42.2.18</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>4.0.0</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-digester</groupId>
+            <artifactId>commons-digester</artifactId>
+            <version>2.1</version>
         </dependency>
 
     </dependencies>
