@@ -21,8 +21,8 @@ import java.util.Set;
 @Data
 @NoArgsConstructor
 @Entity
-@Table(name = "students")
-public class Student {
+@Table(name = "clients")
+public class Client {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -38,24 +38,30 @@ public class Student {
     private String about;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "recordBook_id")
-    private RecordBook recordBook;
+    @JoinColumn(name = "passport_id")
+    private Passport passport;
 
-    @OneToMany(mappedBy = "student", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "client", fetch = FetchType.EAGER)
     private Set<Book> books;
+
+    @OneToMany(mappedBy = "client", fetch = FetchType.EAGER)
+    private Set<Account> accounts;
+
+    @OneToMany(mappedBy = "client", fetch = FetchType.EAGER)
+    private Set<Status> statuses;
 
     @ManyToMany
     @JoinTable(
-            name = "student_subject",
-            joinColumns = @JoinColumn(name = "student_id"),
+            name = "client_subject",
+            joinColumns = @JoinColumn(name = "client_id"),
             inverseJoinColumns = @JoinColumn(name = "subject_id")
     )
     private Set<Subject> subjects;
 
     @ManyToMany
     @JoinTable(
-            name = "student_teacher",
-            joinColumns = {@JoinColumn(name = "student_id")},
+            name = "client_teacher",
+            joinColumns = {@JoinColumn(name = "client_id")},
             inverseJoinColumns = {@JoinColumn(name = "teacher_id")})
     private Set<Teacher> teachers;
 

@@ -6,8 +6,6 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
-import java.util.List;
-
 public class ClientDaoImpl implements ClientDao {
     @Override
     public void save(Client client) {
@@ -37,8 +35,6 @@ public class ClientDaoImpl implements ClientDao {
         session.update(client);
         transaction.commit();
         session.close();
-
-
     }
 
     @Override

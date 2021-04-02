@@ -12,12 +12,9 @@ public class StatusServiceImpl implements StatusService {
     }
 
     @Override
-    public Status update(Status status) {
+    public void update(Status status) {
         StatusDao statusDao = new StatusDaoImpl();
-        status.setId(status.getId());
-        status.setAlias(status.getAlias());
-        status.setDescription(status.getDescription());
-        return statusDao.update(status);
+        statusDao.update(status);
     }
 
     @Override

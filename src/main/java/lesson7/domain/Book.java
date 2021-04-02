@@ -29,7 +29,7 @@ public class Book {
     private String author;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "student_id")
-    private Student student;
+    @JoinColumn(name = "client_id")
+    private Client client;
 
 }

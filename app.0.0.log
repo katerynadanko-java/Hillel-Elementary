@@ -1,0 +1,44 @@
+апр 01, 2021 7:20:21 PM lesson9.Main main
+INFO: some info
+
+
+апр 01, 2021 7:24:22 PM lesson9.Main main
+INFO: some info
+
+
+апр 01, 2021 10:22:12 PM lesson9.service.ClientServiceImpl save
+INFO: lesson9.model.Client@30f39991
+апр 01, 2021 10:22:13 PM lesson9.dao.ClientDaoImpl save
+INFO: lesson9.model.Client@30f39991
+апр 01, 2021 10:22:13 PM org.hibernate.Version logVersion
+INFO: HHH000412: Hibernate ORM core version 5.4.29.Final
+апр 01, 2021 10:22:15 PM org.hibernate.annotations.common.reflection.java.JavaReflectionManager <clinit>
+INFO: HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+апр 01, 2021 10:22:17 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+WARN: HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+апр 01, 2021 10:22:17 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+INFO: HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/postgres]
+апр 01, 2021 10:22:17 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+INFO: HHH10001001: Connection properties: {user=postgres, password=****}
+апр 01, 2021 10:22:17 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+INFO: HHH10001003: Autocommit mode: false
+апр 01, 2021 10:22:17 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections <init>
+INFO: HHH000115: Hibernate connection pool size: 1 (min=1)
+апр 01, 2021 10:22:19 PM org.hibernate.dialect.Dialect <init>
+INFO: HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect
+апр 01, 2021 10:22:22 PM org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl getIsolatedConnection
+INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@18324f97] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+апр 01, 2021 10:22:22 PM org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler logWarning
+WARN: SQL Warning Code: 0, SQLState: 00000
+апр 01, 2021 10:22:22 PM org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler logWarning
+WARN: ограничение "uk_bk5a426h3syjwxb86vfnwvxig" в таблице "statuses" не существует, пропускается
+апр 01, 2021 10:22:22 PM org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator initiateService
+INFO: HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+апр 01, 2021 10:44:03 PM lesson9.dao.ClientDaoImpl save
+INFO: lesson9.model.Client@23fc625e
+апр 01, 2021 11:05:58 PM lesson9.dao.ClientDaoImpl save
+INFO: lesson9.model.Client@7eda2dbb
+апр 01, 2021 11:09:12 PM lesson9.dao.ClientDaoImpl save
+INFO: lesson9.model.Client@7eda2dbb
+
+

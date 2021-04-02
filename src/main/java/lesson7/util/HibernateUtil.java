@@ -1,9 +1,12 @@
 package lesson7.util;
 
+import lesson7.domain.Account;
 import lesson7.domain.Book;
-import lesson7.domain.RecordBook;
+import lesson7.domain.Passport;
+import lesson7.domain.Passport;
 import lesson7.domain.Runk;
-import lesson7.domain.Student;
+import lesson7.domain.Client;
+import lesson7.domain.Status;
 import lesson7.domain.Subject;
 import lesson7.domain.Teacher;
 import org.hibernate.SessionFactory;
@@ -19,12 +22,14 @@ public class HibernateUtil {
 
                 Configuration configuration = new Configuration().configure();
 
-                configuration.addAnnotatedClass(Student.class);
+                configuration.addAnnotatedClass(Client.class);
                 configuration.addAnnotatedClass(Book.class);
                 configuration.addAnnotatedClass(Subject.class);
-                configuration.addAnnotatedClass(RecordBook.class);
+                configuration.addAnnotatedClass(Passport.class);
                 configuration.addAnnotatedClass(Teacher.class);
                 configuration.addAnnotatedClass(Runk.class);
+                configuration.addAnnotatedClass(Status.class);
+                configuration.addAnnotatedClass(Account.class);
 
                 StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder()
                         .applySettings(configuration.getProperties());

@@ -19,14 +19,13 @@ public class StatusDaoImpl implements StatusDao{
     }
 
     @Override
-    public Status update(Status status) {
+    public void update(Status status) {
         SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
         session.update(status);
         transaction.commit();
         session.close();
-        return status;
     }
 
     @Override

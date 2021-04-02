@@ -28,7 +28,7 @@ public class Subject {
     private String description;
 
     @ManyToMany(mappedBy = "subjects")
-    private Set<Student> students;
+    private Set<Client> clients;
 
     @ManyToMany
     @JoinTable(
