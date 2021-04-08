@@ -46,7 +46,7 @@ public class Information {
     @Override
     public String toString() {
         return "Information{" +
-                "pseudonym: " + nickname + "\n" +
+                "nickname: " + nickname + "\n" +
                 "mail: " + mail + "\n" +
                 "userMail: " + userMail + "\n" +
                 '}';
