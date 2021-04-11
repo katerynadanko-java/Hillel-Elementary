@@ -13,9 +13,13 @@ public class Main {
         System.out.println("predicateHomeWork.salary: " + predicateHomeWork.salary(1400.5));
 
         ConsumerHomeWork<String> consumerHomeWork = string -> {
-            char[] chars = string.toCharArray();
-            for (int i = 0; i < chars.length; i++) {
-                System.out.print("[" + chars[i] + "], ");
+            if ((string == null) || (string.isEmpty())) {
+                System.out.println("string is empty");
+            } else {
+                char[] chars = string.toCharArray();
+                for (int i = 0; i < chars.length; i++) {
+                    System.out.print("[" + chars[i] + "], ");
+                }
             }
         };
         System.out.print("consumerHomeWork.stringToCharArray: ");
