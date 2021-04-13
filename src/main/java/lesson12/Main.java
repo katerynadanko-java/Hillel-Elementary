@@ -8,9 +8,19 @@ import lesson7.domain.Client;
 
 public class Main {
     public static void main(String[] args) {
-        PredicateHomeWork<Double> predicateHomeWork = doubleSalary -> doubleSalary > 1500.0;
-        System.out.println("predicateHomeWork.salary: " + predicateHomeWork.salary(1600.0));
+        PredicateHomeWork<Double> predicateHomeWork = doubleSalary -> {
+
+            if (doubleSalary <= 0) {
+                System.out.println("Not valid value of salary!");
+
+            } else if ((doubleSalary > 0) && (doubleSalary <= 1500.0)) {
+                return false;
+            }
+                return true;
+        };
+        System.out.println("predicateHomeWork.salary: " + predicateHomeWork.salary(160000.0));
         System.out.println("predicateHomeWork.salary: " + predicateHomeWork.salary(1400.5));
+        System.out.println("predicateHomeWork.salary: " + predicateHomeWork.salary(-9.0));
 
         ConsumerHomeWork<String> consumerHomeWork = string -> {
             if ((string == null) || (string.isEmpty())) {
