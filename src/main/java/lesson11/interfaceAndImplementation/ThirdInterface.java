@@ -1,4 +1,4 @@
-package lesson11.InterfaceForClass;
+package lesson11.interfaceAndImplementation;
 
 public interface ThirdInterface {
     default void printDefault(String s) {

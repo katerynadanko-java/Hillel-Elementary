@@ -1,12 +1,12 @@
-package lesson11.entity;
+package lesson11.interfaceAndImplementation;
 
-import lesson11.InterfaceForClass.FourthInterface;
-import lesson11.InterfaceForClass.ThirdInterface;
+import lesson11.interfaceAndImplementation.FourthInterface;
+import lesson11.interfaceAndImplementation.ThirdInterface;
 
-public class SecondClass implements ThirdInterface, FourthInterface {
+public class SecondInterfaceIml implements ThirdInterface, FourthInterface {
     @Override
     public void printDefault(String s) {
-        System.out.println(s + " method print() from no matter which interface because it overrides in SecondClass");
+        System.out.println(s + " method print() from no matter which interface because it overrides in SecondInterfaceIml");
     }
 
     @Override

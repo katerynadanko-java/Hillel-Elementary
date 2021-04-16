@@ -1,11 +1,11 @@
 package lesson11;
 
-import lesson11.InterfaceForClass.FirstInterface;
-import lesson11.InterfaceForClass.FourthInterface;
-import lesson11.InterfaceForClass.SecondInterface;
-import lesson11.InterfaceForClass.ThirdInterface;
-import lesson11.entity.FirstClass;
-import lesson11.entity.SecondClass;
+import lesson11.interfaceAndImplementation.FirstInterface;
+import lesson11.interfaceAndImplementation.FourthInterface;
+import lesson11.interfaceAndImplementation.SecondInterface;
+import lesson11.interfaceAndImplementation.ThirdInterface;
+import lesson11.interfaceAndImplementation.FirstInterfaceIml;
+import lesson11.interfaceAndImplementation.SecondInterfaceIml;
 import lesson11.util.Helper;
 
 import java.io.IOException;
@@ -14,18 +14,18 @@ import java.util.Optional;
 public class Main {
 
     public static void main(String[] args) throws Throwable {
-        String s1 = "This is class FirstClass and";
-        String s2 = "This is class SecondClass and";
+        String s1 = "This is class FirstInterfaceIml and";
+        String s2 = "This is class SecondInterfaceIml and";
         String s3 = "This is Static";
-        String s4 = "The same that in FirstClass and";
-        String s5 = "The same that in SecondClass and";
+        String s4 = "The same that in FirstInterfaceIml and";
+        String s5 = "The same that in SecondInterfaceIml and";
 
-        FirstClass firstClass = new FirstClass();
-        SecondClass secondClass = new SecondClass();
-        FirstInterface firstClassFromFirstInterface = new FirstClass();
-        SecondInterface firstClassFromSecondInterface = new FirstClass();
-        ThirdInterface secondClassFromThirdInterface = new SecondClass();
-        FourthInterface secondClassFromFourthInterface = new SecondClass();
+        FirstInterfaceIml firstInterfaceIml = new FirstInterfaceIml();
+        SecondInterfaceIml secondInterfaceIml = new SecondInterfaceIml();
+        FirstInterface firstClassFromFirstInterface = new FirstInterfaceIml();
+        SecondInterface firstClassFromSecondInterface = new FirstInterfaceIml();
+        ThirdInterface secondClassFromThirdInterface = new SecondInterfaceIml();
+        FourthInterface secondClassFromFourthInterface = new SecondInterfaceIml();
 
         System.out.println("Interfaces with static methods: ");
         FirstInterface.makeStatic(s3);
@@ -33,32 +33,32 @@ public class Main {
         ThirdInterface.makeStatic(s3);
         FourthInterface.makeStatic(s3);
 
-        System.out.println("FirstClass firstClass: ");
-        firstClass.contract1(s1);
-        firstClass.contract2(s1);
-        firstClass.printDefault(s1);
+        System.out.println("FirstInterfaceIml firstInterfaceIml: ");
+        firstInterfaceIml.contract1(s1);
+        firstInterfaceIml.contract2(s1);
+        firstInterfaceIml.printDefault(s1);
 
-        System.out.println("SecondClass secondClass: ");
-        secondClass.contract1(s2);
-        secondClass.contract2(s2);
-        secondClass.printDefault(s2);
+        System.out.println("SecondInterfaceIml secondInterfaceIml: ");
+        secondInterfaceIml.contract1(s2);
+        secondInterfaceIml.contract2(s2);
+        secondInterfaceIml.printDefault(s2);
 
-        System.out.println("firstClassFromFirstInterface: ");
+        System.out.println("firstInterfaceImlFromFirstInterface: ");
         firstClassFromFirstInterface.contract1(s4);
         firstClassFromFirstInterface.contract2(s4);
         firstClassFromFirstInterface.printDefault(s4);
 
-        System.out.println("firstClassFromSecondInterface: ");
+        System.out.println("firstInterfaceImlFromSecondInterface: ");
         firstClassFromSecondInterface.contract1(s4);
         firstClassFromSecondInterface.contract2(s4);
         firstClassFromSecondInterface.printDefault(s4);
 
-        System.out.println("secondClassFromThirdInterface: ");
+        System.out.println("secondInterfaceImlFromThirdInterface: ");
         secondClassFromThirdInterface.contract1(s5);
         secondClassFromThirdInterface.contract2(s5);
         secondClassFromThirdInterface.printDefault(s5);
 
-        System.out.println("secondClassFromFourthInterface: ");
+        System.out.println("secondInterfaceImlFromFourthInterface: ");
         secondClassFromFourthInterface.contract1(s5);
         secondClassFromFourthInterface.contract2(s5);
         secondClassFromFourthInterface.printDefault(s5);
