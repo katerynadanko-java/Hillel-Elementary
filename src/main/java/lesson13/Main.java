@@ -111,7 +111,7 @@ public class Main {
                 .sorted(Comparison::compareByAge)
                 .peek(System.out::println)
                 .sorted(myComparison::compareByName)
-                .map(s -> s.getName())
+                .map(Dog::getName)
                 .sorted(String::compareToIgnoreCase)
                 .peek(System.out::println)
                 .collect(Collectors.toCollection(HashSet::new))
