@@ -21,7 +21,6 @@ public class Main {
                 methodWithTheSameLogic();
             }
         });
-
         thread1.start();
         thread1.join();
         thread2.start();
