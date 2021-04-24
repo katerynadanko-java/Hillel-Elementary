@@ -20,7 +20,7 @@ public class Main {
         implementsRunnableThread.join();
 
         ImplementsCallable implementsCallable = new ImplementsCallable();
-        FutureTask<String> task = new FutureTask(implementsCallable);
+        FutureTask<Integer> task = new FutureTask(implementsCallable);
         Thread implementsCallableThread = new Thread(task);
         implementsCallableThread.start();
         implementsCallableThread.join();

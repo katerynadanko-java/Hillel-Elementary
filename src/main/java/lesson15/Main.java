@@ -11,12 +11,14 @@ public class Main {
     public static void main(String[] args) throws InterruptedException {
         Object key = new Object();
         Thread thread1 = new Thread(() -> {
+            Thread.currentThread().setName("First thread");
             synchronized (key) {
                 methodWithTheSameLogic();
             }
         });
 
         Thread thread2 = new Thread(() -> {
+            Thread.currentThread().setName("Second thread");
             synchronized (key) {
                 methodWithTheSameLogic();
             }
@@ -26,21 +28,9 @@ public class Main {
         thread2.start();
         thread2.join();
 
-        Thread thread3 = new Thread(() -> {
-            classWith3Methods.jumping();
-            classWith3Methods.walking();
-            classWith3Methods.sleeping();
-        });
-        Thread thread4 = new Thread(() -> {
-            classWith3Methods.jumping();
-            classWith3Methods.walking();
-            classWith3Methods.sleeping();
-        });
-        Thread thread5 = new Thread(() -> {
-            classWith3Methods.jumping();
-            classWith3Methods.walking();
-            classWith3Methods.sleeping();
-        });
+        Thread thread3 = new Thread(Main::methodForClassWith3Methods);
+        Thread thread4 = new Thread(Main::methodForClassWith3Methods);
+        Thread thread5 = new Thread(Main::methodForClassWith3Methods);
         thread3.start();
         thread4.start();
         thread5.start();
@@ -59,5 +49,11 @@ public class Main {
             e.printStackTrace();
         }
         System.out.println("Decrement atomicInteger: " + Thread.currentThread().getName() + " " + atomicInteger.get());
+    }
+
+    public static void methodForClassWith3Methods() {
+        classWith3Methods.jump();
+        classWith3Methods.walk();
+        classWith3Methods.dance();
     }
 }

@@ -6,22 +6,22 @@ import java.util.concurrent.locks.ReentrantLock;
 public class ClassWith3Methods {
     Lock lock = new ReentrantLock();
 
-    public void jumping() {
+    public void jump() {
         lock.lock();
         for (int i = 0; i < 10; i++) {
             System.out.println(Thread.currentThread().getName() + " Iteration: " + i + " I am jumping");
         }
     }
 
-    public void walking() {
+    public void walk() {
         for (int i = 0; i < 10; i++) {
             System.out.println(Thread.currentThread().getName() + " Iteration: " + i + " I am walking");
         }
     }
 
-    public void sleeping() {
+    public void dance() {
         for (int i = 0; i < 10; i++) {
-            System.out.println(Thread.currentThread().getName() + " Iteration: " + i + " I am sleeping");
+            System.out.println(Thread.currentThread().getName() + " Iteration: " + i + " I am dancing");
         }
         lock.unlock();
     }

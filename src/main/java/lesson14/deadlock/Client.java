@@ -19,7 +19,7 @@ public class Client {
 
     public synchronized String getPassportNumber() {
         try {
-            Thread.sleep(1);
+            Thread.sleep(10);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
